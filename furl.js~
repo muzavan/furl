@@ -1,0 +1,64 @@
+/**
+ * @name furl
+ * @version version 0.0.1
+ * @author Muhammad Reza Irvanda
+ * @fileoverview
+ * Current features included : Redirect, get GET Request Parameter
+ */
+
+/**
+ * Redirect to a new URL
+ *
+ * @param String new URL
+ * @return void
+ */
+function redirectToURL(newURL)
+{
+    window.location.replace(newURL);
+    return;
+}
+
+
+/**
+ * Returns value from a GET Request Parameter
+ *
+ * @param String Parameter's Name
+ * @return String Parameter's Value, undefined if not Paramater's Name not found
+ */
+
+function getURLParamValue(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+
+    return undefined;
+}
+
+/**
+ * Returns array of all GET Parameter's name
+ *
+ * @param void
+ * @return array of String
+ */
+
+function getAllURLParams()
+{
+    // How to create array in javascript?
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        //something.add(sParameterName[0]);
+    }
+
+    return undefined;
+}
